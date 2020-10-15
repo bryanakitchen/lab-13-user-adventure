@@ -12,15 +12,13 @@ form.addEventListener('submit', (e) => {
 
     const data = new FormData(form);
     
-    console.log(data.get('name'));
+    const user = {
+        name: data.get('name'),
+        completed: {}
+    };
+
+    saveUser(user);
+
+    window.location.href = './dinner/index.html';
 });
 
-export function findById(someArray, someId) {
-    for (let i = 0; i < someArray.length; i++) {
-        const item = someArray[i];
-
-        if (item.id === someId) {
-            return item;
-        }
-    }
-}
