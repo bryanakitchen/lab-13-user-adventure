@@ -2,7 +2,7 @@
 // const restaurant = 
 export default [{
     id: 'dinner',
-    title: 'What is the special today?',
+    title: `Dinner at Tony's Pastaria`,
     image: 'restaurant.jpg',
     description: `
         You join your date at the dinner table. After some small talk about the weather, the waiter comes by to ask for your order.
@@ -30,7 +30,7 @@ export default [{
         next: 'endDate',
     }],
 }, {
-    id: 'topic',
+    id: 'topic-link',
     title: 'Beat the Small Talk',
     image: 'smile.jpg',
     description: `
@@ -125,7 +125,7 @@ export default [{
         next: null,
     }],
 }, {
-    id: 'end date',
+    id: 'end-date',
     title: 'Run!',
     image: 'running.jpg',
     description: `

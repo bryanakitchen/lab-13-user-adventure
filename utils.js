@@ -1,4 +1,10 @@
+import scenarios from './data/date-data.js';
+
 const USER = 'USER';
+
+function selectOption(option) {
+    
+}
 
 // this function will not return anything
 export function saveUser(user) {
@@ -21,3 +27,14 @@ export function findById(someArray, someId) {
         }
     }
 }
+
+// const searchParams = new URLSearchParams(window.location.search);
+
+// const id = searchParams.get('id');
+
+// const scenario = findById(scenarios, id); 
+
+// console.log(scenario);
+
+// quest.id.includes('')
+// starts with / ends with
