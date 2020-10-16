@@ -26,7 +26,7 @@ scenarios[id].choices.forEach(choice => {
     
     if (choice.id === 'nothing') {
         link.textContent = choice.description;
-        link.href = `/end-date/index.html`;
+        link.href = `../end-date/index.html`;
 
     } else if (choice.id === 'start over') {
         link.textContent = choice.description;
