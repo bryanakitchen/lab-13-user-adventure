@@ -9,54 +9,27 @@ section.appendChild(h2);
 
 const h3 = document.createElement('h3');
 h3.textContent = scenarios[0].description;
-
 section.appendChild(h3);
 
-const form = document.createElement('form');
-section.appendChild(form);
+const ul = document.createElement('ul');
+section.appendChild(ul);
 
 scenarios[0].dinnerChoices.forEach(dinnerChoice => {
-    const label = document.createElement('label');
-    const span = document.createElement('span');
-
-    // span.textContent = dinnerChoice.description;
-    // const radio = document.createElement('input');
-    // radio.type = 'radio';
-    // radio.value = dinnerChoice.id;
-    // radio.name = 'choices';
-
-    const button = document.createElement('button');
-    button.textContent = dinnerChoice.description;
-    button.value = dinnerChoice.id;
-    form.appendChild(button);
-
-    label.append(span);
-
-    form.appendChild(label);
     
-    button.addEventListener('click', () => {
-        // depending on which one is selected, it takes you to another scenario.
-    // if () {
-
-    // } else {
-    //     window.location.href = './end/index.html';
-    // }
+    const li = document.createElement('li');
+    const link = document.createElement('a');
     
-    });
+    li.appendChild(link);
+    
+    if (dinnerChoice.id === 'nothing') {
+        link.textContent = dinnerChoice.description;
+        link.href = `/end-date/index.html`;
+
+    } 
+    link.textContent = dinnerChoice.description;
+    link.href = `/next/?id=${dinnerChoice.id}`;
+
+    ul.append(li);
+    
 });
 
-// const button = document.createElement('button');
-// button.textContent = 'Confirm';
-// form.appendChild(button);
-
-
-// const ul = document.createElement('ul');
-// const li = document.createElement('li');
-// const link = document.createElement('a');
-
-// li.appendChild(link);
-
-// link.textContent = scenario.title;
-// link.href = `/quest/?id=${quest.id}`;
-
-// ul.append(li);

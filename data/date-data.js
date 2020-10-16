@@ -1,137 +1,147 @@
 //if I have time, change and add
 // const restaurant = 
-export default [{
-    id: 'dinner',
-    title: `Dinner at Tony's Pastaria`,
-    image: 'restaurant.jpg',
-    description: `
-        You join your date at the dinner table. After some small talk about the weather, the waiter comes by to ask for your order.
+export default [
+    {
+        id: 'order',
+        title: `Dinner at Tony's Pastaria`,
+        image: 'restaurant.jpg',
+        description: `
+        You join your date at the dinner table. After some small talk about the weather, the waiter comes by to ask for your order. 
     `,
-    dinnerChoices: [{
-        id: 'spaghetti',
-        description: 'Spaghetti and Meatballs',
-        result: `
+        dinnerChoices: [
+            {
+                id: 'spaghetti',
+                description: 'Spaghetti and Meatballs',
+                result: `
             Bold choice to go with your white shirt, but you're particularly confident this evening. 
         `,
-        next: 'topic',
-    }, {
-        id: 'salad',
-        description: 'Caesar Salad',
-        result: `
+                next: '/?id=topic',
+            }, {
+                id: 'salad',
+                description: 'Caesar Salad',
+                result: `
             Your date makes an ill-mannered comment about your choice: 'You eat like a bird!'.
         `,
-        next: 'topic',
-    }, {
-        id: 'nothing',
-        description: `You're suddenly not hungry. You wonder if you have been catfished.`,
-        result: `
+                next: '/?id=topic',
+            }, {
+                id: 'nothing',
+                description: `You're suddenly not hungry. You wonder if you have been catfished.`,
+                result: `
             You send the emergency text to your friend who gives you a call telling you about how her boyfriend just broke up with her and she needs you.
         `,
-        next: 'endDate',
-    }],
-}, {
-    id: 'topic-link',
-    title: 'Beat the Small Talk',
-    image: 'smile.jpg',
-    description: `
+                next: 5,
+            }
+        ],
+    }, {
+        id: 'topic',
+        title: 'Beat the Small Talk',
+        image: 'smile.jpg',
+        description: `
         Now that the menu is gone, there is nothing between you and your date. Time to talk about something other than the weather.
     `,
-    topicChoices: [{
-        id: 'politics',
-        description: 'Politics',
-        result: `
+        topicChoices: [
+            {
+                id: 'politics',
+                description: 'Politics',
+                result: `
             Might as well find out now. Your date does not feel offended by the question and takes the question with grace. 
         `,
-        next: 'dessert',
-    }, {
-        id: 'hobbies',
-        description: 'Hobbies',
-        result: `
+                next: 3,
+            }, {
+                id: 'hobbies',
+                description: 'Hobbies',
+                result: `
             Your date mentions they are really into beetle fighting. Your fight or flight kicks in - time to go!
         `,
-        next: 'endDate',
-    }, {
-        id: 'exes',
-        description: 'Ex-Partners',
-        result: `
+                next: 5,
+            }, {
+                id: 'exes',
+                description: 'Ex-Partners',
+                result: `
             Your date says they've never been in a real relationship before. Maybe a red flag, but you want to see where this goes.
         `,
-        next: 'dessert',
-    }],
+                next: 3,
+            }
+        ],
 
-}, {
-    id: 'dessert',
-    title: 'Sweet or Sour',
-    image: 'some.jpg',
-    description: `
+    }, {
+        id: 3,
+        title: 'Sweet or Sour',
+        image: 'some.jpg',
+        description: `
         The waiter interrupts your intense conversation and asks if you saved room for dessert
     `,
-    dessertChoices: [{
-        id: 'dessert',
-        description: 'Order Tiramisu',
-        result: `
+        dessertChoices: [
+            {
+                id: 'dessert',
+                description: 'Order Tiramisu',
+                result: `
             Spend more time getting to know your date. 
         `,
-        next: 'goodbye',
-    }, {
-        id: 'full',
-        description: 'No room for dessert',
-        result: `
+                next: 4,
+            }, {
+                id: 'full',
+                description: 'No room for dessert',
+                result: `
             You have no room for dessert, but might have room for your date in your life.
         `,
-        next: 'goodbye',
-    }, {
-        id: 'check',
-        description: `Check please!`,
-        result: `
+                next: 4,
+            }, {
+                id: 'check',
+                description: `Check please!`,
+                result: `
             You've had enough. Time to bolt.
         `,
-        next: 'endDate',
-    }],
-}, {
-    id: 'good bye',
-    title: 'Time to Say Good Bye',
-    image: 'standing-outside.jpg',
-    description: `
+                next: 5,
+            }
+        ],
+    }, {
+        id: 4,
+        title: 'Time to Say Good Bye',
+        image: 'standing-outside.jpg',
+        description: `
         It's been an eventful evening. Now it's time for the last awkward bit... how to say good bye.
     `,
-    goodbyeChoices: [{
-        id: 'hug',
-        description: 'Hug',
-        result: `
+        goodbyeChoices: [
+            {
+                id: 'hug',
+                description: 'Hug',
+                result: `
             You had a nice time. Maybe you can still be friends. 
         `,
-        next: null,
-    }, {
-        id: 'kiss',
-        description: 'Peck on the cheek',
-        result: `
+                next: -1,
+            }, {
+                id: 'kiss',
+                description: 'Peck on the cheek',
+                result: `
             You enjoyed your time and you let your date know you would like to see them again. 
         `,
-        next: null,
-    }, {
-        id: 'handshake',
-        description: 'Handshake',
-        result: `
+                next: -1,
+            }, {
+                id: 'handshake',
+                description: 'Handshake',
+                result: `
             This felt about as fun as a business meeting.
         `,
-        next: null,
-    }, {
-        id: 'high five',
-        description: 'High Five',
-        result: `
+                next: -1,
+            }, {
+                id: 'high five',
+                description: 'High Five',
+                result: `
             Good job, but better luck on the next one! 
         `,
-        next: null,
-    }],
-}, {
-    id: 'end-date',
-    title: 'Run!',
-    image: 'running.jpg',
-    description: `
+                next: -1,
+            }
+        ],
+    }, {
+        id: 5,
+        title: 'Run!',
+        image: 'running.jpg',
+        description: `
         You knew you shouldn't have reinstalled Tinder! Go home and finish the bottle of wine in your fridge.
     `,
-}];
+    }
+];
 
 
 // const coffeeShop = {
