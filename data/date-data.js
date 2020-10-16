@@ -1,5 +1,7 @@
 //if I have time, change and add
 // const restaurant = 
+
+// scenarios 
 export default [
     {
         id: 'order',
@@ -35,7 +37,7 @@ export default [
     }, {
         id: 'topic',
         title: 'Beat the Small Talk',
-        image: 'smile.jpg',
+        image: 'chat.jpg',
         description: `
         Now that the menu is gone, there is nothing between you and your date. Time to talk about something other than the weather.
     `,
@@ -67,7 +69,7 @@ export default [
     }, {
         id: 'dessert',
         title: 'Sweet or Sour',
-        image: 'some.jpg',
+        image: 'dessert.jpg',
         description: `
         The waiter interrupts your intense conversation and asks if you saved room for dessert
     `,
@@ -98,7 +100,7 @@ export default [
     }, {
         id: 'bye',
         title: 'Time to Say Good Bye',
-        image: 'standing-outside.jpg',
+        image: 'awkward.jpg',
         description: `
         It's been an eventful evening. Now it's time for the last awkward bit... how to say good bye.
     `,

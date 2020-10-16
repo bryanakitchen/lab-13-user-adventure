@@ -23,11 +23,11 @@ scenarios[0].dinnerChoices.forEach(dinnerChoice => {
     
     if (ifStatement === 'nothing') {
         link.textContent = dinnerChoice.description;
-        link.href = `/end-date/index.html`;
+        link.href = `../end-date/index.html`;
 
     } else {
         link.textContent = dinnerChoice.description;
-        link.href = `/next/?id=${dinnerChoice.next}`;
+        link.href = `../next/?id=${dinnerChoice.next}`;
     }
 
     ul.append(li);
