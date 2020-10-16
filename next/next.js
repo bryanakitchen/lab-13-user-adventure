@@ -1,52 +1,40 @@
 import scenarios from '../data/date-data.js';
-import { findById } from '../utils.js';
+
+const searchParams = new URLSearchParams(window.location.search);
+
+const id = searchParams.get('id');
 
 const section = document.querySelector('section');
 const h2 = document.createElement('h2');
-h2.textContent = scenarios[0].title;
+h2.textContent = scenarios[id].title;
 
 section.appendChild(h2);
 
 const h3 = document.createElement('h3');
-h3.textContent = scenarios[0].description;
-
+h3.textContent = scenarios[id].description;
 section.appendChild(h3);
 
-const form = document.createElement('form');
-section.appendChild(form);
+const ul = document.createElement('ul');
+section.appendChild(ul);
 
-scenarios[0].dinnerChoices.forEach(dinnerChoice => {
-    const label = document.createElement('label');
-    const span = document.createElement('span');
-
-    const button = document.createElement('button');
-    button.textContent = dinnerChoice.description;
-    button.value = dinnerChoice.id;
-    form.appendChild(button);
-
-    label.append(span);
-
-    form.appendChild(label);
+scenarios[id].choices.forEach(choice => {
     
-    button.addEventListener('click', () => {
-        
-        window.location.href = `./dinnerChoice?id=${.next}`;
+    const li = document.createElement('li');
+    const link = document.createElement('a');
     
-    });
+    li.appendChild(link);
+    
+    if (choice.id === 'nothing') {
+        link.textContent = choice.description;
+        link.href = `/end-date/index.html`;
+
+    } else if (choice.id === 'start over') {
+        link.textContent = choice.description;
+        link.href = `../index.html`;
+    } else {
+        link.textContent = choice.description;
+        link.href = `/next/?id=${choice.next}`;
+    }
+    ul.append(li);
+    
 });
-
-// const button = document.createElement('button');
-// button.textContent = 'Confirm';
-// form.appendChild(button);
-
-
-// const ul = document.createElement('ul');
-// const li = document.createElement('li');
-// const link = document.createElement('a');
-
-// li.appendChild(link);
-
-// link.textContent = scenario.title;
-// link.href = `/quest/?id=${quest.id}`;
-
-// ul.append(li);
