@@ -31,11 +31,16 @@ scenarios[0].dinnerChoices.forEach(dinnerChoice => {
     form.appendChild(button);
 
     label.append(span);
-    // add radio
 
     form.appendChild(label);
     
     button.addEventListener('click', () => {
+        // depending on which one is selected, it takes you to another scenario.
+    // if () {
+
+    // } else {
+    //     window.location.href = './end/index.html';
+    // }
     
     });
 });
