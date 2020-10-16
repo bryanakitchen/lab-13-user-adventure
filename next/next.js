@@ -33,7 +33,7 @@ scenarios[id].choices.forEach(choice => {
         link.href = `../index.html`;
     } else {
         link.textContent = choice.description;
-        link.href = `/next/?id=${choice.next}`;
+        link.href = `./next/?id=${choice.next}`;
     }
     ul.append(li);
     
